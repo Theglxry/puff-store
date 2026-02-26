@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@import "uniwind";
+
+
+@theme {
+    --font-puff: 'Baby Gemoy';
+  }
+  
