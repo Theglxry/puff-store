@@ -1,8 +1,9 @@
-import { router } from "expo-router";
 import { Heart } from "lucide-react-native";
-import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import ImageSlider from "../components/image-slider/image-slider";
+import AllProducts from "../components/all-products/all-products";
+import BottomNav from "../components/bottom-navbar/navbar";
 
 export default function Shop() {
   return (
@@ -18,7 +19,11 @@ export default function Shop() {
         </View>
 
         <ImageSlider />
+        <AllProducts />
       </ScrollView>
+
+
+      <BottomNav />
     </SafeAreaView>
   );
 }

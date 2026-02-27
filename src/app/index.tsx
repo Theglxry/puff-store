@@ -10,14 +10,12 @@ export default function App() {
       <View className="flex-1 bg-white">
         <StatusBar style="dark" />
 
-        {/* PUFF text behind image */}
         <View className="absolute inset-0 items-center justify-start pt-4 z-0">
           <Text className="font-puff text-[120px] leading-none font-extrabold text-gray-400">
             PUFF
           </Text>
         </View>
 
-        {/* Model image on top */}
         <Image
           source={require("../assets/images/homepage-bg.png")}
           className="flex-1 w-full"

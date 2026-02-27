@@ -25,12 +25,12 @@ export default function ImageSlider() {
         }}
         renderItem={({ item }) => (
           <TouchableOpacity
-            className={`w-80 h-60 rounded-2xl overflow-hidden mr-4`}
+            className={`w-screen h-60 rounded-2xl overflow-hidden mr-2`}
             // style={{ backgroundColor: item.color }}
           >
             <LinearGradient
               colors={item.gradient}
-              className="flex-1"
+              className="flex-1  "
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 1 }}
             >
@@ -40,7 +40,7 @@ export default function ImageSlider() {
                 resizeMode="contain"
               />
               <View className="absolute bottom-0 left-0 p-3">
-                <Text className="text-white font-bold text-xl">
+                <Text className="font-puff text-white font-bold text-xl">
                   {item.name}
                 </Text>
               </View>
@@ -64,35 +64,40 @@ export default function ImageSlider() {
 }
 
 const collections = [
-  {
-    id: 1,
-    banner: require("../../assets/images/popular-products/1.png"),
-    name: "Weekend Vibes",
-    gradient: ["#134e4a", "#065f46"] as const,  
-  },
+  // {
+  //   id: 1,
+  //   banner: require("../../assets/images/popular-products/14.png"),
+  //   name: "Weekend Vibes",
+  //   gradient: ["#CC5500", "#065f46"] as const,
+  // },
+
   {
     id: 2,
-    banner: require("../../assets/images/popular-products/4.png"),
-    name: "Urban Collection",
-    gradient: ["#831843", "#500724"] as const ,  
+    banner: require("../../assets/images/popular-products/1.png"),
+    name: "Weekend Vibes",
+    gradient: ["#134e4a", "#065f46"] as const,
   },
   {
     id: 3,
-    banner: require("../../assets/images/popular-products/3.png"),
-    name: "Street Style",
-    gradient: ["#1f2937", "#111827"] as const, 
+    banner: require("../../assets/images/popular-products/4.png"),
+    name: "Urban Collection",
+    gradient: ["#831843", "#500724"] as const,
   },
   {
     id: 4,
+    banner: require("../../assets/images/popular-products/3.png"),
+    name: "Street Style",
+    gradient: ["#1f2937", "#111827"] as const,
+  },
+  {
+    id: 5,
     banner: require("../../assets/images/popular-products/2.png"),
     name: "New Arrivals",
-    gradient: ["#5C4033", "#967969"] as const, 
-
-    
+    gradient: ["#5C4033", "#967969"] as const,
   },
 ];
 
-//   wihtout indicator
+//   without indicator
 {
   /* <ScrollView
 horizontal
