@@ -16,8 +16,8 @@ export default function BottomNav() {
   const tabs = [
     { name: "Home", icon: Home, route: "/" },
     { name: "Shop", icon: Heart, route: "/shop" },
-    { name: "Search", icon: Search, route: "#" },
-    { name: "Cart", icon: ShoppingBag, route: "#" },
+    { name: "Search", icon: Search, route: "/" },
+    { name: "Cart", icon: ShoppingBag, route: "/" },
   ];
 
   return (
@@ -26,7 +26,7 @@ export default function BottomNav() {
         intensity={80}
         tint="light"
         style={{
-          borderRadius: "9%",
+          borderRadius: 28,
           overflow: "hidden",
           borderWidth: 1,
           borderColor: "rgba(255,255,255,0.4)",

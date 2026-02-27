@@ -14,6 +14,7 @@ export default function Layout() {
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="index" />
       <Stack.Screen name="shop" />
+      <Stack.Screen name="product/[id]" />
     </Stack>
   );
 }

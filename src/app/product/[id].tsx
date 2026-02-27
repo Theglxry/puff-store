@@ -1,9 +1,7 @@
 import { router, useLocalSearchParams } from "expo-router";
-import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import { allProducts } from "../../data/products";
 import { LinearGradient } from "expo-linear-gradient";
-import { ArrowRight } from "lucide-react-native";
 
 export default function ProductDetials() {
   const { id } = useLocalSearchParams();

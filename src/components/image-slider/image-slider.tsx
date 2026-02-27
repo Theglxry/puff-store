@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {
+  Dimensions,
   FlatList,
   Image,
   ScrollView,
@@ -8,6 +9,8 @@ import {
   View,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+
+const { width: screenWidth } = Dimensions.get("window");
 
 export default function ImageSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -20,7 +23,7 @@ export default function ImageSlider() {
         pagingEnabled
         showsHorizontalScrollIndicator={false}
         onScroll={(e) => {
-          const index = Math.round(e.nativeEvent.contentOffset.x / 256);
+          const index = Math.round(e.nativeEvent.contentOffset.x / screenWidth);
           setActiveIndex(index);
         }}
         renderItem={({ item }) => (
