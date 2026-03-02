@@ -1,13 +1,26 @@
 import { router } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { ArrowRight } from "lucide-react-native";
-import { Text, View, Image, TouchableOpacity } from "react-native";
+import {
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  useColorScheme,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
+  const colorScheme = useColorScheme();
+  const isDark = colorScheme === "dark";
+
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
-      <View className="flex-1 bg-white">
+    <SafeAreaView
+      style={{ flex: 1, backgroundColor: isDark ? "#1B1212" : "#fff" }}
+    >
+      <View className="flex-1 bg-white dark:bg-[#1B1212]"
+      style={{ backgroundColor: isDark ? "#1B1212" : "#fff" }}
+      >
         <StatusBar style="dark" />
 
         <View className="absolute inset-0 items-center justify-start pt-4 z-0">

@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "uniwind";
 
+@custom-variant dark (&:is(.dark *));
+
 
 @theme {
     --font-puff: 'Baby Gemoy';

@@ -26,7 +26,7 @@ export default function BottomNav() {
         intensity={80}
         tint="light"
         style={{
-          borderRadius: 28,
+          borderRadius: "9%",
           overflow: "hidden",
           borderWidth: 1,
           borderColor: "rgba(255,255,255,0.4)",

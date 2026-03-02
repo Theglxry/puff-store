@@ -1,17 +1,30 @@
 import { LinearGradient } from "expo-linear-gradient";
 import { router } from "expo-router";
 import { Heart } from "lucide-react-native";
-import { Image, Pressable, Text, TouchableOpacity, View } from "react-native";
+import {
+  Image,
+  Pressable,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { allProducts } from "../../data/products";
 
-export default function AllProducts() {
+export default function AllProducts({ isDark }: { isDark: boolean }) {
   return (
     <View>
       <View className="w-full flex flex-row justify-between py-5">
-        <Text className="text-white text-xl">Popular</Text>
+        <Text style={{ color: isDark ? "#fff" : "#000" }} className="text-xl">
+          Popular
+        </Text>
 
         <Pressable>
-          <Text className="text-gray-300 text-xl font-semibold">Show All</Text>
+          <Text
+            style={{ color: isDark ? "#fff" : "#000" }}
+            className="text-xl font-semibold"
+          >
+            Show All
+          </Text>
         </Pressable>
       </View>
 
@@ -48,9 +61,18 @@ export default function AllProducts() {
 
             {/* details */}
             <View className="mt-2">
-              <Text className="text-white font-bold">{item.name}</Text>
-              <Text className="text-gray-400 text-xs">{item.collection}</Text>
-              <Text className="text-white">{item.price}</Text>
+              <Text
+                style={{ color: isDark ? "#fff" : "#000" }}
+                className="font-bold"
+              >
+                {item.name}
+              </Text>
+              <Text style={{ color: isDark ? "#fff" : "#99a1af" }}>
+                {item.collection}
+              </Text>
+              <Text style={{ color: isDark ? "#fff" : "#000" }} className="">
+                {item.price}
+              </Text>
             </View>
           </TouchableOpacity>
         ))}
@@ -58,4 +80,3 @@ export default function AllProducts() {
     </View>
   );
 }
-

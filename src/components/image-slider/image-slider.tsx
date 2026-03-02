@@ -3,7 +3,6 @@ import {
   Dimensions,
   FlatList,
   Image,
-  ScrollView,
   Text,
   TouchableOpacity,
   View,
@@ -12,11 +11,10 @@ import { LinearGradient } from "expo-linear-gradient";
 
 const { width: screenWidth } = Dimensions.get("window");
 
-export default function ImageSlider() {
+export default function ImageSlider({ isDark }: { isDark: boolean }) {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <View>
-      {/* image list slider */}
       <FlatList
         data={collections}
         horizontal
@@ -28,8 +26,8 @@ export default function ImageSlider() {
         }}
         renderItem={({ item }) => (
           <TouchableOpacity
-            className={`w-screen h-60 rounded-2xl overflow-hidden mr-2`}
-            // style={{ backgroundColor: item.color }}
+          style={{ width: screenWidth - 50, marginHorizontal: 0 }}
+            className={`h-60 rounded-2xl overflow-hidden mr-2`}
           >
             <LinearGradient
               colors={item.gradient}
@@ -43,7 +41,7 @@ export default function ImageSlider() {
                 resizeMode="contain"
               />
               <View className="absolute bottom-0 left-0 p-3">
-                <Text className="font-puff text-white font-bold text-xl">
+                <Text className="font-puff text-white  font-bold text-xl">
                   {item.name}
                 </Text>
               </View>
@@ -56,10 +54,22 @@ export default function ImageSlider() {
       {/* indicators */}
       <View className="flex-row justify-center gap-2 mt-3">
         {collections.map((_, index) => (
-          <View
-            key={index}
-            className={`h-2 rounded-full ${activeIndex === index ? "w-8 bg-white" : "w-2 bg-gray-500"}`}
-          />
+              <View
+              key={index}
+              style={{
+                height: 8,
+                borderRadius: 999,
+                width: activeIndex === index ? 32 : 8,
+                backgroundColor: activeIndex === index
+                  ? isDark ? "#ffffff" : "#000000"
+                  : "#6b7280",
+              }}
+            />
+        
+          // <View
+          //   key={index}
+          //   className={`h-2 rounded-full ${activeIndex === index ? `w-8 bg-white dark:bg-black` : `w-2 bg-gray-500 dark:bg-gray-500`}`}
+          // />
         ))}
       </View>
     </View>

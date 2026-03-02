@@ -1,4 +1,6 @@
 import { useFonts } from "expo-font";
+import { Uniwind } from "uniwind";
+
 import "../global.css";
 
 import { Slot, Stack } from "expo-router";
@@ -7,6 +9,9 @@ export default function Layout() {
   const [fontsLoaded] = useFonts({
     "Baby Gemoy": require("../assets/fonts/Baby Gemoy.ttf"),
   });
+
+  Uniwind.setTheme("system");
+
 
   if (!fontsLoaded) return null;
 
